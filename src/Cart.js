@@ -1,10 +1,8 @@
-import './App.css';
-import './Container.css';
+import Content from './components/Content';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
-import Content from './components/Content';
 
-export default function App() {
+export default function Cart() {
   return (
     <div className="container">
       <Nav />

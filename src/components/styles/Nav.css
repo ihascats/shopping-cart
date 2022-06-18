@@ -1,0 +1,50 @@
+.container > nav {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 100vw;
+  background-color: rgb(238, 208, 125);
+  height: 64px;
+  align-items: center;
+}
+
+h1 {
+  padding: 0 16px;
+}
+
+nav > ul {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  list-style: none;
+  justify-content: end;
+}
+
+.container > nav > a {
+  color: black;
+  text-decoration: none;
+  letter-spacing: 2px;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  width: min-content;
+}
+
+li {
+  height: 100%;
+}
+
+button {
+  border: none;
+  border-right: 1px solid rgb(235, 222, 189);
+  width: 128px;
+  height: 64px;
+  background-color: rgb(218, 190, 113);
+}
+
+button:hover {
+  background-color: rgb(223, 194, 115);
+}
+
+button:active {
+  background-color: rgb(240, 209, 125);
+}

@@ -1,0 +1,17 @@
+footer {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 2px;
+  font-size: 14px;
+  height: 4vh;
+  background-color: rgb(54, 48, 30);
+  color: rgb(255, 250, 219);
+}
+
+footer > a {
+  color: rgb(255, 250, 219);
+}

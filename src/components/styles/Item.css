@@ -1,0 +1,42 @@
+.product {
+  display: grid;
+  grid-template-rows: auto auto;
+  width: 301px;
+  height: 386px;
+  color: wheat;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border: 2px solid wheat;
+  border-radius: 2px;
+}
+
+.product > img {
+  height: 312px;
+}
+
+.product > p {
+  width: 301px;
+  text-align: center;
+  padding: 8px;
+}
+
+.product > div {
+  width: 301px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid wheat;
+  align-items: center;
+}
+
+.product > div > p {
+  text-align: center;
+}
+
+.product > div > button {
+  border: none;
+  background-color: green;
+  padding: 8px;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #fff7e4;
+}

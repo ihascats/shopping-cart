@@ -1,0 +1,39 @@
+.introduction {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  gap: 48px;
+}
+
+.introduction > a > button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid orange;
+  color: orange;
+  font-size: 36px;
+  padding: 16px;
+}
+
+.introduction > a > button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.introduction > a > button:active {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.introduction > h1 {
+  color: #fff0d4;
+}
+
+.introduction > p {
+  padding: 0 15%;
+  text-align: center;
+  line-height: 32px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #dbc294;
+}

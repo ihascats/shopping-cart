@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-h1 {
+.container > nav > a > h1 {
   padding: 0 16px;
 }
 
@@ -33,7 +33,7 @@ li {
   height: 100%;
 }
 
-button {
+nav > ul > a > li > button {
   border: none;
   border-right: 1px solid rgb(235, 222, 189);
   width: 128px;
@@ -41,10 +41,10 @@ button {
   background-color: rgb(218, 190, 113);
 }
 
-button:hover {
+nav > ul > a > li > button:hover {
   background-color: rgb(223, 194, 115);
 }
 
-button:active {
+nav > ul > a > li > button:active {
   background-color: rgb(240, 209, 125);
 }

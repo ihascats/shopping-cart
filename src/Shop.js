@@ -4,18 +4,23 @@ import Item from './components/Item';
 import Nav from './components/Nav';
 
 export default function Shop() {
+  const itemDisplay = (
+    <div className="shopDiv">
+      <div className="sortBy">
+        <p>Sort By:</p>
+        <select name="order" id="order">
+          <option value="descending">desc &#8595;</option>
+          <option value="ascending">asc &#8593;</option>
+        </select>
+      </div>
+      <div className="products">{/* products here */}</div>
+    </div>
+  );
+
   return (
     <div className="container">
       <Nav />
-      <Content
-        content={
-          <Item
-            image="https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_bread_05.jpg"
-            name="White Bread"
-            price="6.86"
-          />
-        }
-      />
+      <Content content={itemDisplay} />
       <Footer />
     </div>
   );

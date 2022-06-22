@@ -1,0 +1,22 @@
+.notification {
+  position: absolute;
+  background: #f9eabe;
+  padding: 18px 36px;
+  border-radius: 16px 16px 0 0;
+  border-bottom: 4px solid rgb(58, 128, 0);
+  letter-spacing: 1px;
+  top: 90%;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+@keyframes example {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

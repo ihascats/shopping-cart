@@ -1,6 +1,6 @@
 import './styles/Item.css';
 
-export default function Item({ name, price, image }) {
+export default function Item({ name, price, image, displayClicked }) {
   return (
     <div className="product">
       <img src={image} alt="" />
@@ -9,7 +9,9 @@ export default function Item({ name, price, image }) {
         <p className="productPrice" data-testid="price">
           {price}$
         </p>
-        <button>ADD TO CART</button>
+        <button onClick={() => displayClicked()} data-testid="addToCart">
+          ADD TO CART
+        </button>
       </div>
     </div>
   );

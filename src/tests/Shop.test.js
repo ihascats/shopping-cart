@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, getByTestId, render, screen } from '@testing-library/react';
 import Shop from '../Shop.js';
 import { BrowserRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
@@ -33,7 +33,6 @@ describe('Store Sorting', () => {
       // Find and select the Ireland option, like a real user would.
       screen.getByTestId('asc'),
     );
-    console.log(screen.getByTestId('selectElement').value);
     const prices = screen
       .getAllByTestId('price')
       .map((value) => Number(value.textContent.slice(0, -1)));
@@ -45,4 +44,17 @@ describe('Store Sorting', () => {
 
     expect(prices).toStrictEqual(ascendingPrices);
   });
+});
+
+it('Pressing add to cart button shows a notification', () => {
+  render(
+    <BrowserRouter>
+      <Shop />
+    </BrowserRouter>,
+  );
+  const button = screen.getAllByTestId('addToCart')[0];
+  fireEvent.click(button);
+  expect(screen.getByTestId('notification').textContent).toBe(
+    'Successfully Added To The Cart!',
+  );
 });

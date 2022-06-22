@@ -6,8 +6,8 @@ import Nav from './components/Nav';
 import stock from './scripts/constructor.store-items';
 
 export default function Shop(props) {
-  const descendingStock = stock.stock.sort((a, b) => b.price - a.price);
-  const ascendingStock = stock.stock.sort((a, b) => a.price - b.price);
+  const descendingStock = [...stock.stock.sort((a, b) => b.price - a.price)];
+  const ascendingStock = [...stock.stock.sort((a, b) => a.price - b.price)];
 
   const [sortedStock, setSortedStock] = useState(descendingStock);
 

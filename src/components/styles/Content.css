@@ -46,6 +46,8 @@ select:hover {
   overflow-x: auto;
   max-height: 79vh;
   scroll-behavior: smooth;
+  box-shadow: inset 0px -20px 20px -16px rgb(253 213 155 / 75%);
+  clip-path: inset(0px -15px 0px 0px);
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
 }

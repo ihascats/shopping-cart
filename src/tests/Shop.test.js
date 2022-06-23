@@ -3,6 +3,8 @@ import { fireEvent, getByTestId, render, screen } from '@testing-library/react';
 import Shop from '../Shop.js';
 import { BrowserRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
+import cart from '../scripts/constructor.cart.js';
+import stock from '../scripts/constructor.store-items.js';
 
 describe('Store Sorting', () => {
   it('Store items are sorted in descending order at first', () => {
@@ -57,4 +59,19 @@ it('Pressing add to cart button shows a notification', () => {
   expect(screen.getByTestId('notification').textContent).toBe(
     'Successfully Added To The Cart!',
   );
+});
+
+it('Pressing add to cart button adds an item to the cart', () => {
+  render(
+    <BrowserRouter>
+      <Shop />
+    </BrowserRouter>,
+  );
+  const button = screen.getAllByTestId('addToCart')[0];
+  fireEvent.click(button);
+  let content;
+  if (cart.cartContents.length > 0) {
+    content = cart.cartContents[0].name;
+  }
+  expect(content).toBe(screen.getAllByTestId('productName')[0].textContent);
 });

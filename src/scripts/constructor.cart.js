@@ -12,7 +12,7 @@ class Cart {
   addToCart(productName) {
     this.cartContents.forEach((value) => {
       if (value.name.toLowerCase() === productName.toLowerCase()) {
-        value.amount += 1;
+        value.amount = value.amount + 1;
       }
     });
   }

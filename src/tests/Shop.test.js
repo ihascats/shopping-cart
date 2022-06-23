@@ -1,10 +1,9 @@
 import React from 'react';
-import { fireEvent, getByTestId, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import Shop from '../Shop.js';
 import { BrowserRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 import cart from '../scripts/constructor.cart.js';
-import stock from '../scripts/constructor.store-items.js';
 
 describe('Store Sorting', () => {
   it('Store items are sorted in descending order at first', () => {
@@ -48,41 +47,42 @@ describe('Store Sorting', () => {
   });
 });
 
-it('Pressing add to cart button shows a notification', () => {
-  render(
-    <BrowserRouter>
-      <Shop />
-    </BrowserRouter>,
-  );
-  const button = screen.getAllByTestId('addToCart')[0];
-  fireEvent.click(button);
-  expect(screen.getByTestId('notification').textContent).toBe(
-    'Successfully Added To The Cart!',
-  );
-});
+//
+describe('Cart', () => {
+  it('Pressing add to cart button shows a notification', () => {
+    render(
+      <BrowserRouter>
+        <Shop />
+      </BrowserRouter>,
+    );
+    const button = screen.getAllByTestId('addToCart')[0];
+    fireEvent.click(button);
+    expect(screen.getByTestId('notification').textContent).toBe(
+      'Successfully Added To The Cart!',
+    );
+  });
+  it('Pressing add to cart button adds an item to the cart', () => {
+    render(
+      <BrowserRouter>
+        <Shop />
+      </BrowserRouter>,
+    );
+    // Button is pressed in the example above
+    // const button = screen.getAllByTestId('addToCart')[0];
+    // fireEvent.click(button);
 
-it('Pressing add to cart button adds an item to the cart', () => {
-  render(
-    <BrowserRouter>
-      <Shop />
-    </BrowserRouter>,
-  );
-  const button = screen.getAllByTestId('addToCart')[0];
-  fireEvent.click(button);
-  let content = cart.cartContents.map((value) => {
-    if (
-      value.name.toLowerCase() ===
-      screen.getAllByTestId('productName')[0].textContent.toLowerCase()
-    ) {
-      return value.name;
-    }
-    return;
+    // eslint-disable-next-line array-callback-return
+    let content = cart.cartContents.map((value) => {
+      if (value.amount === 1) {
+        return value.name;
+      }
+    });
+    content.forEach((value) => {
+      if (value) {
+        content = value;
+        return;
+      }
+    });
+    expect(content).toBe(screen.getAllByTestId('productName')[0].textContent);
   });
-  content.forEach((value) => {
-    if (value) {
-      content = value;
-      return;
-    }
-  });
-  expect(content).toBe(screen.getAllByTestId('productName')[0].textContent);
 });

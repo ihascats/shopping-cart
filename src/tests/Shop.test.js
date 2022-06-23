@@ -69,9 +69,20 @@ it('Pressing add to cart button adds an item to the cart', () => {
   );
   const button = screen.getAllByTestId('addToCart')[0];
   fireEvent.click(button);
-  let content;
-  if (cart.cartContents.length > 0) {
-    content = cart.cartContents[0].name;
-  }
+  let content = cart.cartContents.map((value) => {
+    if (
+      value.name.toLowerCase() ===
+      screen.getAllByTestId('productName')[0].textContent.toLowerCase()
+    ) {
+      return value.name;
+    }
+    return;
+  });
+  content.forEach((value) => {
+    if (value) {
+      content = value;
+      return;
+    }
+  });
   expect(content).toBe(screen.getAllByTestId('productName')[0].textContent);
 });

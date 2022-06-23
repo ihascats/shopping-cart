@@ -2,13 +2,17 @@ import stock from './constructor.store-items';
 
 class Cart {
   constructor() {
-    this.cartContents = [];
+    this.cartContents = stock.stock.map((value) => {
+      const objectClone = value;
+      objectClone['amount'] = 0;
+      return objectClone;
+    });
   }
 
   addToCart(productName) {
-    stock.stock.forEach((element) => {
-      if (element.name.toLowerCase() === productName.toLowerCase()) {
-        this.cartContents.push(element);
+    this.cartContents.forEach((value) => {
+      if (value.name.toLowerCase() === productName.toLowerCase()) {
+        value.amount += 1;
       }
     });
   }

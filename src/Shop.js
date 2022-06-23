@@ -7,8 +7,8 @@ import SuccessNotification from './components/SuccessNotification';
 import stock from './scripts/constructor.store-items';
 
 export default function Shop(props) {
-  const [notification, setNotification] = useState(false);
   const [time, setTime] = useState();
+  const [elements, setElements] = useState([]);
 
   const descendingStock = [...stock.stock.sort((a, b) => b.price - a.price)];
   const ascendingStock = [...stock.stock.sort((a, b) => a.price - b.price)];
@@ -27,21 +27,18 @@ export default function Shop(props) {
     );
   });
 
-  async function updateNotification() {
-    if (notification) {
-      setNotification(false);
+  function updateNotification() {
+    if (time) {
       clearTimeout(time);
-      setTime();
     }
-
-    if (!notification) {
-      setTime(
-        setTimeout(() => {
-          setNotification(false);
-        }, 3000),
-      );
-      setNotification(true);
-    }
+    setTime(
+      setTimeout(() => {
+        setElements([]);
+      }, 3000),
+    );
+    const list = [...elements];
+    list.push(<SuccessNotification key={list.length} />);
+    setElements(list);
   }
 
   function changeOrder(event) {
@@ -80,7 +77,7 @@ export default function Shop(props) {
     <div className="container">
       <Nav />
       <Content content={itemDisplay} />
-      {notification ? <SuccessNotification /> : null}
+      {elements ? elements : null}
       <Footer />
     </div>
   );

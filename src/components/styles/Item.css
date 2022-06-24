@@ -10,6 +10,10 @@
   border-radius: 2px;
 }
 
+.product:hover {
+  background-color: rgba(94, 94, 94, 0.7);
+}
+
 .product > img {
   height: 312px;
 }

@@ -61,7 +61,7 @@ describe('Cart', () => {
       'Successfully Added To The Cart!',
     );
   });
-  it('Pressing add to cart button adds an item to the cart', () => {
+  it('Item has been added to the cart', () => {
     render(
       <BrowserRouter>
         <Shop />

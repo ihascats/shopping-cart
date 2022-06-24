@@ -1,0 +1,114 @@
+.cartItemWrapper {
+  color: wheat;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  font-size: 24px;
+  gap: 16px;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: space-between;
+}
+
+.cartItemWrapper:hover {
+  background-color: rgba(53, 53, 53, 0.7);
+}
+
+.cartItemWrapper > .cartItemLeft {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 16px;
+}
+
+.cartItemRight {
+  display: grid;
+  grid-template-columns: max-content max-content max-content max-content;
+  gap: 16px;
+  align-items: center;
+}
+.cartItemRight > p {
+  width: 9ch;
+}
+
+.cartItemWrapper > .cartItemLeft > div {
+  width: 96px;
+  overflow: hidden;
+  display: grid;
+}
+
+.cartItemWrapper > .cartItemLeft > div > img {
+  height: 96px;
+}
+
+.cartItemWrapper > .cartItemLeft > p {
+  display: grid;
+  align-items: center;
+}
+
+#amount {
+  width: 4.5ch;
+}
+
+.removeFromCart,
+#amount {
+  font-size: 24px;
+  padding: 10px 16px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: wheat;
+  border-radius: 4px;
+}
+
+.removeFromCart:hover {
+  background-color: rgba(37, 37, 37, 0.9);
+}
+
+.removeFromCart:active {
+  background-color: rgba(138, 138, 138, 0.6);
+}
+
+.cartContainer {
+  display: grid;
+  height: 100%;
+  align-content: space-between;
+  color: wheat;
+}
+
+.checkout {
+  display: grid;
+  justify-content: center;
+  padding: 16px;
+  letter-spacing: 2px;
+  row-gap: 16px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-top: 2px solid orange;
+  color: orange;
+}
+
+.checkoutButton {
+  border: 2px solid orange;
+  color: orange;
+  font-size: 64px;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: fit-content;
+  padding: 24px;
+}
+.checkoutButton:hover {
+  background-color: rgba(36, 36, 36, 0.9);
+}
+.checkoutButton:active {
+  background-color: rgba(71, 71, 71, 0.9);
+}
+.cartProducts {
+  display: grid;
+  overflow-x: auto;
+  max-height: 69.7vh;
+  scroll-behavior: smooth;
+  box-shadow: inset 0px -20px 20px -16px rgb(253 213 155 / 75%);
+  clip-path: inset(0px -15px 0px 0px);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.cartProducts::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}

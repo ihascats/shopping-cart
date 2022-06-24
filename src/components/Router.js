@@ -4,7 +4,7 @@ import Cart from '../Cart';
 import Shop from '../Shop';
 const RouteSwitch = () => {
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="https://ihascats.github.io/shopping-cart">
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/shop" element={<Shop />} />

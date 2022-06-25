@@ -4,7 +4,7 @@ import Cart from '../Cart';
 import Shop from '../Shop';
 const RouteSwitch = () => {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL + '/'}>
+    <BrowserRouter basename={'/'}>
       <Routes>
         <Route path={process.env.PUBLIC_URL + '/'} element={<App />} />
         <Route path={process.env.PUBLIC_URL + '/shop'} element={<Shop />} />

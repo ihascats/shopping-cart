@@ -18,7 +18,7 @@ export default function App() {
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum.
       </p>
-      <Link to="/shop">
+      <Link to={process.env.PUBLIC_URL + '/shop'}>
         <button>ORDER NOW!</button>
       </Link>
     </div>

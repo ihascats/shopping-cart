@@ -6,9 +6,9 @@ const RouteSwitch = () => {
   return (
     <BrowserRouter basename="/">
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path={process.env.PUBLIC_URL + '/'} element={<App />} />
+        <Route path={process.env.PUBLIC_URL + '/shop'} element={<Shop />} />
+        <Route path={process.env.PUBLIC_URL + '/cart'} element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );
